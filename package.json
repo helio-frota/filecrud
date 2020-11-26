@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "install": "cmake-js compile",
-    "preinstall": "clang-format -i --glob=src/**/*.c"
+    "preinstall": "clang-format -i --glob=src/*.c",
+    "test": "./build/filecrud"
   },
   "license": "MIT",
   "devDependencies": {
