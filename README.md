@@ -8,14 +8,16 @@ This is using:
 3) cmake with basic configuration on CMakeLists.txt
 4) package.json to automate build, run and lint with `npm it`
 
-```console
-npm it
-```
-
-Interesting part of the c code are:
+Interesting parts of the C code are:
 
 - The `__fpurge` from `stdio_ext.h` to clean the
 buffer and to have a consistent menu running in the loop.
 
 - The `fputc` and `fgetc` from `stdio.h` to write and read chars, in this 
 case on the `db.txt` file.
+
+How to run:
+
+```console
+npm it
+```
