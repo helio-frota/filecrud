@@ -44,7 +44,7 @@ This is using:
   fund=false
   ```
 
-Interesting parts of the C code are:
+Interesting parts of the C code for me are:
 
 - The `__fpurge` from `stdio_ext.h` to clean the
 buffer and to have a consistent menu running in the loop.
@@ -56,4 +56,22 @@ How to run:
 
 ```console
 npm it
+```
+
+```console
+ran clang-format on 1 file
+[
+  '/home/hf/.nvm/versions/node/v14.12.0/bin/node',
+  '/home/hf/code/my/filecrud/node_modules/.bin/cmake-js',
+  'compile'
+]
+info TOOL Using Ninja generator, because ninja is available.
+info CMD BUILD
+info RUN cmake --build "/home/hf/code/my/filecrud/build" --config Release
+[2/2] Linking C executable filecrud
+up to date in 0.91s
+
+(r) Read the file
+(w) Write in the file
+(q) exit
 ```

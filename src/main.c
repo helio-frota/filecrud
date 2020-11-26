@@ -19,6 +19,7 @@ void write_content() {
 int main() {
   char option;
   do {
+    printf("\n");
     printf("(r) Read the file\n");
     printf("(w) Write in the file\n");
     printf("(q) exit\n");
