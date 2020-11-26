@@ -36,6 +36,14 @@ This is using:
 
 - `NPM` package.json to automate build, run and lint with `npm it`
 
+- `.npmrc` file with the following configuration:
+  ```
+  package-lock=false
+  loglevel=silent
+  audit=false
+  fund=false
+  ```
+
 Interesting parts of the C code are:
 
 - The `__fpurge` from `stdio_ext.h` to clean the
