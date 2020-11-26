@@ -3,8 +3,17 @@
 
 #define DB_FILE "db.txt"
 
-void read_lines() {
+void read_content() {
   FILE* f = fopen(DB_FILE, "r");
+  char c = fgetc(f);
+  printf("content inside file: %c\n", c);
+  fclose(f);
+}
+
+void write_content() {
+  FILE* f = fopen(DB_FILE, "w");
+  fputc('1', f);
+  fclose(f);
 }
 
 int main() {
@@ -17,6 +26,12 @@ int main() {
       printf("failed to read the option");
     }
     __fpurge(stdin);  // from stdio_ext.h
-    printf("\nselected option %s\n\n", &option);
+
+    if (option == 'r') {
+      read_content();
+    } else if (option == 'w') {
+      write_content();
+    }
+
   } while (option != 'q');
 }
