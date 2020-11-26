@@ -6,10 +6,11 @@
   "main": "index.js",
   "scripts": {
     "install": "cmake-js compile",
-    "format": "clang-format -i --glob=*/**/*.{c}"
+    "preinstall": "clang-format -i --glob=src/**/*.c"
   },
   "license": "MIT",
   "devDependencies": {
+    "clang-format": "^1.4.0",
     "cmake-js": "^6.1.0"
   }
 }
