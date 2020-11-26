@@ -1,9 +1,4 @@
 {
-  "name": "filecrud",
-  "version": "1.0.0",
-  "description": "CRUD operations in a file",
-  "author": "Helio Frota",
-  "main": "index.js",
   "scripts": {
     "install": "cmake-js compile",
     "preinstall": "clang-format -i --glob=src/*.c",
