@@ -62,4 +62,4 @@ npm i clang-format cmake-js documentation -D
 npm it
 ```
 
-![alt screenshot](./s.png)
+![alt screenshot](./screenshot.png)
