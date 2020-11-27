@@ -11,12 +11,17 @@
 void read_content() {
   FILE* f = fopen(DB_FILE, "r");
   char c = fgetc(f);
+  printf("%s%s", CSI, MAGENTA);
   printf("content inside file: %c\n", c);
+  printf("%s%s", CSI, RESET);
   fclose(f);
 }
 
 void write_content() {
   FILE* f = fopen(DB_FILE, "w");
+  printf("%s%s", CSI, MAGENTA);
+  printf("writing 1 in db.txt\n");
+  printf("%s%s", CSI, RESET);
   fputc('1', f);
   fclose(f);
 }
