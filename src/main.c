@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdio_ext.h>
 #include <stdlib.h>
+#include <time.h>
 
 #define DB_FILE "db.txt"
 #define CSI "\x1b["
@@ -31,10 +32,13 @@ void read_content() {
  */
 void write_content() {
   FILE* f = fopen(DB_FILE, "w");
+  // easy and well explained here https://www.youtube.com/watch?v=oXEDMNXzuo4
+  srand(time(NULL));
+  int zero_or_one = rand() % 2;
   printf("%s%s", CSI, MAGENTA);
-  printf("writing 1 in db.txt\n");
+  printf("writing %d in db.txt\n", zero_or_one);
   printf("%s%s", CSI, RESET);
-  fputc('1', f);
+  fputc('0' + zero_or_one, f);  // adding 0 to the int we get the ASCII value
   fclose(f);
 }
 
@@ -48,7 +52,10 @@ void write_content() {
  * @returns {void} void
  */
 void print_menu() {
-  system("clear");  // from stdlib.h
+  int result = system("clear");  // from stdlib.h
+  if (result != 0) {
+    printf("error trying to clear the screen");
+  }
   printf("%s%s", CSI, GREEN);
   printf("\n");
   printf("(r) Read the file\n");
