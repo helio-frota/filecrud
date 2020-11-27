@@ -44,6 +44,9 @@ This is using:
   fund=false
   ```
 
+- `documentation` version 4.x to easily have docs with `npm run docs`
+
+
 Interesting parts of the C code for me are:
 
 - The `__fpurge` from `stdio_ext.h` to clean the
