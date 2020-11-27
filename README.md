@@ -55,6 +55,7 @@ case on the `db.txt` file.
 How to run:
 
 ```console
+npm i clang-format cmake-js documentation -D
 npm it
 ```
 
