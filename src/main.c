@@ -9,6 +9,21 @@
 #define GREEN "32m"
 #define MAGENTA "35m"
 
+void print_menu();
+
+/**
+ * Deletes the db.txt file.
+ *
+ * @name delete_file
+ * @returns {void} void
+ */
+void delete_file() {
+  int result = remove(DB_FILE);
+  if (result != 0) {
+    printf("error trying delete the file");
+  }
+}
+
 /**
  * Reads the content of the db.txt file.
  *
@@ -17,6 +32,10 @@
  */
 void read_content() {
   FILE* f = fopen(DB_FILE, "r");
+  if (f == NULL) {
+    printf("file does not exist");
+    print_menu();
+  }
   char c = fgetc(f);
   printf("%s%s", CSI, MAGENTA);
   printf("content inside file: %c\n", c);
@@ -25,7 +44,7 @@ void read_content() {
 }
 
 /**
- * Writes '1' to the db.txt file
+ * Writes '0' or '1' to the db.txt file
  * and prints out message about it.
  * @name write_content
  * @returns {void} void
@@ -58,8 +77,9 @@ void print_menu() {
   }
   printf("%s%s", CSI, GREEN);
   printf("\n");
-  printf("(r) Read the file\n");
-  printf("(w) Write in the file\n");
+  printf("(r) Read\n");
+  printf("(w) Write\n");
+  printf("(d) Delete\n");
   printf("(q) exit\n");
   printf("%s%s", CSI, RESET);
 }
@@ -78,14 +98,21 @@ int main() {
     }
     __fpurge(stdin);  // from stdio_ext.h
 
-    if (option == 'r') {
-      read_content();
-    } else if (option == 'w') {
-      write_content();
-    } else if (option == 'q') {
-      break;
-    } else {
-      print_menu();
+    switch (option) {
+      case 'r':
+        read_content();
+        break;
+      case 'w':
+        write_content();
+        break;
+      case 'd':
+        delete_file();
+        print_menu();
+        break;
+      case 'q':
+        break;
+      default:
+        print_menu();
     }
 
   } while (option != 'q');
