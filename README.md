@@ -46,15 +46,6 @@ This is using:
 
 - `documentation` version 4.x to easily have docs with `npm run docs`
 
-
-Interesting parts of the C code for me are:
-
-- The `__fpurge` from `stdio_ext.h` to clean the
-buffer and to have a consistent menu running in the loop.
-
-- The `fputc` and `fgetc` from `stdio.h` to write and read chars, in this 
-case on the `db.txt` file.
-
 How to run:
 
 ```console
