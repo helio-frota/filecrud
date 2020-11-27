@@ -58,19 +58,4 @@ How to run:
 npm it
 ```
 
-```console
-ran clang-format on 1 file
-[
-  '/home/hf/.nvm/versions/node/v14.12.0/bin/node',
-  '/home/hf/code/my/filecrud/node_modules/.bin/cmake-js',
-  'compile',
-  '-l',
-  'warn'
-]
-ninja: no work to do.
-up to date in 0.707s
-
-(r) Read the file
-(w) Write in the file
-(q) exit
-```
+![alt screenshot](./s.png)
