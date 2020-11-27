@@ -63,13 +63,12 @@ ran clang-format on 1 file
 [
   '/home/hf/.nvm/versions/node/v14.12.0/bin/node',
   '/home/hf/code/my/filecrud/node_modules/.bin/cmake-js',
-  'compile'
+  'compile',
+  '-l',
+  'warn'
 ]
-info TOOL Using Ninja generator, because ninja is available.
-info CMD BUILD
-info RUN cmake --build "/home/hf/code/my/filecrud/build" --config Release
-[2/2] Linking C executable filecrud
-up to date in 0.91s
+ninja: no work to do.
+up to date in 0.707s
 
 (r) Read the file
 (w) Write in the file

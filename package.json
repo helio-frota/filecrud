@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "install": "cmake-js compile",
+    "install": "cmake-js compile -l warn",
     "preinstall": "clang-format -i --glob=src/*.c",
     "test": "./build/filecrud"
   },
