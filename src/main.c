@@ -1,7 +1,12 @@
 #include <stdio.h>
 #include <stdio_ext.h>
+#include <stdlib.h>
 
 #define DB_FILE "db.txt"
+#define CSI "\x1b["
+#define RESET "0m"
+#define GREEN "32m"
+#define MAGENTA "35m"
 
 void read_content() {
   FILE* f = fopen(DB_FILE, "r");
@@ -17,10 +22,13 @@ void write_content() {
 }
 
 void print_menu() {
+  system("clear");  // from stdlib.h
+  printf("%s%s", CSI, GREEN);
   printf("\n");
   printf("(r) Read the file\n");
   printf("(w) Write in the file\n");
   printf("(q) exit\n");
+  printf("%s%s", CSI, RESET);
 }
 
 int main() {
@@ -36,6 +44,8 @@ int main() {
       read_content();
     } else if (option == 'w') {
       write_content();
+    } else if (option == 'q') {
+      break;
     } else {
       print_menu();
     }
