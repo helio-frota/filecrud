@@ -16,13 +16,17 @@ void write_content() {
   fclose(f);
 }
 
+void print_menu() {
+  printf("\n");
+  printf("(r) Read the file\n");
+  printf("(w) Write in the file\n");
+  printf("(q) exit\n");
+}
+
 int main() {
   char option;
+  print_menu();
   do {
-    printf("\n");
-    printf("(r) Read the file\n");
-    printf("(w) Write in the file\n");
-    printf("(q) exit\n");
     if (scanf("%c", &option) != 1) {  // test to avoid unused result warning
       printf("failed to read the option");
     }
@@ -32,6 +36,8 @@ int main() {
       read_content();
     } else if (option == 'w') {
       write_content();
+    } else {
+      print_menu();
     }
 
   } while (option != 'q');
